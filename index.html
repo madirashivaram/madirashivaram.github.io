@@ -115,7 +115,7 @@ nav.scrolled{box-shadow:var(--shadow-md)}
 .profile-ring{position:absolute;inset:-14px;border-radius:50%;background:conic-gradient(var(--accent) 0deg 90deg,rgba(var(--accent-rgb),0.15) 90deg 200deg,rgba(var(--accent-rgb),0.4) 200deg 270deg,var(--accent) 270deg 360deg);animation:rotatering 10s linear infinite;padding:3px}
 .profile-ring-bg{width:100%;height:100%;border-radius:50%;background:var(--bg)}
 @keyframes rotatering{to{transform:rotate(360deg)}}
-.profile-img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 8%}
+.profile-img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center center}
 .profile-fallback{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));display:none;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff}
 
 /* ─── SECTIONS ─── */
@@ -351,9 +351,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
         <span class="bracket">&lt;</span>&nbsp;DevOps &nbsp;·&nbsp; Platform Engineering &nbsp;·&nbsp; Site Reliability&nbsp;<span class="bracket">/&gt;</span>
       </p>
       <p class="hero-bio animate d3">
-        Five years engineering <strong>cloud-native platforms</strong> at enterprise scale across
-        <strong>AWS, Azure, and GCP</strong>. At Citibank, I own the multi-cloud Kubernetes
-        infrastructure for internal payment systems — spanning platform architecture,
+        Five years engineering <strong>cloud native platforms</strong> at enterprise scale across
+        <strong>AWS, Azure, and GCP</strong>. At Citibank, I own the multi cloud Kubernetes
+        infrastructure for internal payment systems, spanning platform architecture,
         deployment pipelines, and production observability.
       </p>
       <div class="hero-actions animate d4">
@@ -397,13 +397,13 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- ABOUT -->
 <section id="about" class="alt-bg">
   <div class="wrap">
-    <p class="section-tag animate">01 · About</p>
+    <p class="section-tag animate">About</p>
     <h2 class="section-heading animate d1">Architecting the Cloud,<br>One Platform at a Time</h2>
     <div class="about-grid">
       <div class="about-text animate d2">
-        <p>I'm a Cloud Platform Engineer based in <span class="highlight">San Jose, CA</span>, with five years building and operating production-grade infrastructure at enterprise scale. At <span class="highlight">Citibank</span>, I own the full multi-cloud Kubernetes platform layer for internal payment systems — from network segmentation and IAM design to GitOps pipelines and Dynatrace-powered observability.</p>
-        <p>Before that, I scaled <span class="highlight">EKS-based healthcare infrastructure</span> at Zensar Technologies and led a full Azure cloud migration at <span class="highlight">Accenture</span>, where Terraform automation compressed environment provisioning from days to under 6 hours.</p>
-        <p>I hold a <span class="highlight">Master's in Computer Science</span> from Texas Tech University and carry dual cloud certifications across AWS and Azure.</p>
+        <p>I'm a Platform Engineer based in <span class="highlight">San Jose, CA</span>, with five years building and operating production grade infrastructure at enterprise scale. At <span class="highlight">Citibank</span>, I own the full multi cloud Kubernetes platform layer for internal payment systems from network segmentation and IAM design to GitOps pipelines and Dynatrace powered observability.</p>
+        <p>Before that, I scaled <span class="highlight">EKS based healthcare infrastructure</span> at Zensar Technologies and led a full Azure cloud migration at <span class="highlight">Accenture</span>, where Terraform automation compressed environment provisioning from days to under 6 hours.</p>
+        <p>I hold a <span class="highlight">Master's in Computer Science</span> from Texas Tech University and carry cloud certifications across AWS and Azure.</p>
       </div>
       <div class="stats-grid animate d3">
         <div class="stat-card">
@@ -430,9 +430,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <p class="section-tag animate">02 · Experience</p>
+    <p class="section-tag animate">Experience</p>
     <h2 class="section-heading animate d1">Work History</h2>
-    <p class="section-sub animate d2">Five years across fintech, healthcare, and enterprise consulting — each role adding a new layer of platform complexity.</p>
+    <p class="section-sub animate d2">Five years across fintech, healthcare, and enterprise consulting, each role adding a new layer of platform complexity.</p>
     <div class="timeline">
 
       <!-- Citibank -->
@@ -446,8 +446,8 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <div class="tl-role">Cloud Platform Engineer</div>
           <div class="tl-loc">📍 San Jose, CA</div>
           <p class="tl-story">
-            Architect and operate the secure multi-cloud Kubernetes platform on AWS and GCP powering
-            Citibank's internal payment processing systems. Own the full platform layer — cloud landing
+            Architect and operate the secure multi cloud Kubernetes platform on AWS and GCP powering
+            Citibank's internal payment processing systems. Own the full platform layer, cloud landing
             zone design with network segmentation and IAM boundaries, reusable Terraform module development,
             GitOps pipelines via ArgoCD with blue/green and canary deployment strategies, and centralized
             observability through Dynatrace with Davis AI anomaly detection. Enforce secrets governance
@@ -473,13 +473,13 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <div class="tl-role">AWS DevOps Engineer</div>
           <div class="tl-loc">📍 Hyderabad, India</div>
           <p class="tl-story">
-            Designed modular AWS infrastructure with Terraform — VPCs, multi-AZ RDS, Auto Scaling Groups,
-            ALBs, IAM, and S3 — and led the migration of containerized healthcare applications into Amazon
+            Designed modular AWS infrastructure with Terraform, VPCs, multi-AZ RDS, Auto Scaling Groups,
+            ALBs, IAM, and S3. Led the migration of containerized healthcare applications into Amazon
             EKS with Helm and ArgoCD GitOps workflows. Built and owned CI/CD pipelines in Jenkins and
             GitLab CI that lifted release cadence from bi-weekly to multiple daily deployments. Drove a
             30% MTTR reduction through centralized Prometheus, Grafana, and CloudWatch observability.
             Diagnosed and resolved a critical production IAM misconfiguration, restoring full availability
-            and hardening least-privilege policies across the environment.
+            and hardening least privilege policies across the environment.
           </p>
           <div class="tl-impacts">
             <span class="tl-impact"><span class="tl-impact-val">↓55%</span> environment deploy time</span>
@@ -501,10 +501,10 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <div class="tl-role">Cloud Engineer</div>
           <div class="tl-loc">📍 Hyderabad, India</div>
           <p class="tl-story">
-            Led the migration of 30+ legacy and AWS-hosted workloads to Azure, standardizing infrastructure
+            Led the migration of 30+ legacy and AWS hosted workloads to Azure, standardizing infrastructure
             and enabling hybrid cloud scalability across the organization. Used Terraform and ARM templates
-            to automate end-to-end provisioning — compressing environment setup from multiple days to under
-            6 hours. Combined Terraform with Ansible for post-provisioning VM configuration, producing
+            to automate end to end provisioning compressing environment setup from multiple days to under
+            6 hours. Combined Terraform with Ansible for post provisioning VM configuration, producing
             consistent server builds at scale. Established Azure DevOps CI/CD pipelines for AKS deployments
             and managed Kubernetes workloads declaratively through ArgoCD GitOps workflows.
           </p>
@@ -524,9 +524,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- SKILLS -->
 <section id="skills" class="alt-bg">
   <div class="wrap">
-    <p class="section-tag animate">03 · Skills</p>
+    <p class="section-tag animate">Skills</p>
     <h2 class="section-heading animate d1">Technical Skills</h2>
-    <p class="section-sub animate d2">A production-tested stack spanning multi-cloud infrastructure, platform automation, and enterprise observability.</p>
+    <p class="section-sub animate d2">A production tested stack spanning multi cloud infrastructure, platform automation, and enterprise observability.</p>
     <div class="skills-grid">
       <div class="skill-cat animate d1">
         <div class="skill-cat-head"><div class="skill-cat-ico">☁️</div><span class="skill-cat-name">Cloud Platforms</span></div>
@@ -592,9 +592,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- EDUCATION + CERTS -->
 <section id="credentials">
   <div class="wrap">
-    <p class="section-tag animate">04 · Credentials</p>
+    <p class="section-tag animate">Credentials</p>
     <h2 class="section-heading animate d1">Education &amp; Certifications</h2>
-    <p class="section-sub animate d2">Academic foundations and industry-recognized cloud credentials.</p>
+    <p class="section-sub animate d2">Academic foundations and industry recognized cloud credentials.</p>
     <div class="cred-grid">
       <div class="cred-card animate d1">
         <div class="cred-ico">🎓</div>
@@ -639,7 +639,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- CONTACT -->
 <section id="contact" class="alt-bg">
   <div class="wrap">
-    <p class="section-tag animate">05 · Contact</p>
+    <p class="section-tag animate">Contact</p>
     <div class="contact-box animate d1">
       <div class="contact-layout">
 
@@ -691,13 +691,13 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off">
 
           <div class="form-group">
-            <label class="form-label" for="cf-name">Full Name</label>
+            <label class="form-label" for="cf-name">Full Name <span style="color:var(--accent)">*</span></label>
             <input class="form-input" type="text" id="cf-name" name="name"
               placeholder="Your name" required autocomplete="name">
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="cf-email">Email Address</label>
+            <label class="form-label" for="cf-email">Email Address <span style="color:var(--accent)">*</span></label>
             <input class="form-input" type="email" id="cf-email" name="email"
               placeholder="you@company.com" required autocomplete="email">
           </div>
@@ -731,7 +731,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">© 2025 <strong>Shiva Rami Reddy Madira</strong> &nbsp;·&nbsp; San Jose, CA</p>
+    <p class="footer-copy">© 2026 <strong>Shiva Rami Reddy Madira</strong> &nbsp;·&nbsp;</p>
     <div class="footer-right">
       <a href="https://github.com/madirashivaram" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/shivarammadira/" target="_blank" rel="noopener">LinkedIn</a>
