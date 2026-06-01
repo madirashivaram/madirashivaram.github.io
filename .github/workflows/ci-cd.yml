@@ -1,0 +1,91 @@
+name: CI/CD — Portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+  pull-requests: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  quality:
+    name: Quality & Security Checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install tooling
+        run: npm install -g htmlhint serve @lhci/cli
+
+      - name: HTML Validation
+        run: htmlhint index.html --config .htmlhintrc
+
+      - name: Secret Scanning (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Start local server
+        run: |
+          serve -s . -p 3000 &
+          echo "SERVER_PID=$!" >> $GITHUB_ENV
+          sleep 4
+
+      - name: Lighthouse CI
+        run: lhci autorun --config=.lighthouserc.json
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Stop local server
+        if: always()
+        run: kill $SERVER_PID || true
+
+      - name: Upload Lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci/
+          retention-days: 30
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: quality
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Print live URL
+        run: echo "🚀 Live at ${{ steps.deployment.outputs.page_url }}"
