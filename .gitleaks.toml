@@ -1,0 +1,5 @@
+[allowlist]
+  description = "Global allowlist"
+  regexes = [
+    '''data:image/jpeg;base64,'''
+  ]
