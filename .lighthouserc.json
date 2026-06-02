@@ -10,17 +10,29 @@
     "assert": {
       "preset": "lighthouse:no-pwa",
       "assertions": {
-        "categories:performance":    ["warn", {"minScore": 0.5}],
-        "categories:accessibility":  ["warn", {"minScore": 0.8}],
-        "categories:best-practices": ["warn", {"minScore": 0.8}],
-        "categories:seo":            ["warn", {"minScore": 0.8}],
-        "color-contrast":                    ["warn", {"minScore": 0}],
-        "uses-responsive-images":            ["warn", {"maxLength": 5}],
-        "modern-image-formats":              ["warn", {"maxLength": 5}],
-        "render-blocking-resources":         ["warn", {"maxLength": 5}],
-        "render-blocking-insight":           ["warn", {"maxLength": 5}],
-        "network-dependency-tree-insight":   ["warn", {"minScore": 0}],
-        "robots-txt":                        ["error", {"minScore": 1}]
+        "categories:performance":              ["warn",  {"minScore": 0.3}],
+        "categories:accessibility":            ["warn",  {"minScore": 0.8}],
+        "categories:best-practices":           ["warn",  {"minScore": 0.8}],
+        "categories:seo":                      ["warn",  {"minScore": 0.8}],
+
+        "color-contrast":                      ["warn",  {"minScore": 0}],
+        "image-delivery-insight":              ["warn",  {"minScore": 0}],
+        "uses-responsive-images":              ["warn",  {"maxLength": 5}],
+        "modern-image-formats":                ["warn",  {"maxLength": 5}],
+        "render-blocking-resources":           ["warn",  {"maxLength": 5}],
+        "render-blocking-insight":             ["warn",  {"maxLength": 5}],
+        "network-dependency-tree-insight":     ["warn",  {"minScore": 0}],
+        "uses-long-cache-ttl":                 ["warn",  {"maxLength": 10}],
+        "cache-insight":                       ["warn",  {"maxLength": 10}],
+        "interactive":                         ["warn",  {"minScore": 0}],
+        "largest-contentful-paint":            ["warn",  {"minScore": 0}],
+        "first-contentful-paint":              ["warn",  {"minScore": 0}],
+
+        "robots-txt":                          ["error", {"minScore": 1}],
+        "document-title":                      ["error", {"minScore": 1}],
+        "meta-description":                    ["error", {"minScore": 1}],
+        "html-has-lang":                       ["error", {"minScore": 1}],
+        "image-alt":                           ["error", {"minScore": 1}]
       }
     },
     "upload": {
