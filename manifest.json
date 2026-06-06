@@ -1,11 +1,11 @@
 {
   "name": "Shiva Rami Reddy Madira",
   "short_name": "Shiva.dev",
-  "description": "Cloud Platform Engineer — DevOps · Platform Engineering · SRE",
+  "description": "Cloud Platform Engineer \u2014 DevOps \u00b7 Platform Engineering \u00b7 SRE",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#080c18",
+  "background_color": "#04080f",
   "theme_color": "#4285F4",
   "icons": [
     {
