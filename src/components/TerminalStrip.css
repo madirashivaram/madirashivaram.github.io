@@ -1,0 +1,56 @@
+.terminal-strip {
+  background: var(--surface-container);
+  border-top: 1px solid var(--outline);
+  border-bottom: 1px solid var(--outline);
+}
+
+.terminal-strip__inner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.terminal-strip__dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.terminal-strip__dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--on-surface-variant);
+  opacity: 0.4;
+}
+
+.terminal-strip__text {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--g-green);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.terminal-strip__cursor {
+  display: inline-block;
+  margin-left: 1px;
+  animation: terminal-blink 1s step-end infinite;
+}
+
+@keyframes terminal-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 860px) {
+  .terminal-strip__text {
+    font-size: 12px;
+  }
+}
