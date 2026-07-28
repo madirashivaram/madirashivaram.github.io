@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(cd *)",
+      "Bash(npm run *)",
+      "Bash(npx --yes htmlhint index.html --config .htmlhintrc)",
+      "Bash(lsof -ti:5183 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(disown)",
+      "Bash(timeout 30 bash -c 'until curl -sf http://localhost:5183/ >/dev/null; do sleep 1; done')",
+      "Bash(curl -s http://localhost:5183/)",
+      "Bash(npx --yes playwright screenshot --viewport-size=1400,900 http://localhost:5183/ /private/tmp/claude-501/-Users-madirashivaram-Desktop-Files-madirashivaram-github-io/f28a0a04-9b35-4f3e-94e2-4681d00ca80b/scratchpad/hero-top-dark.png)",
+      "Bash(git status *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

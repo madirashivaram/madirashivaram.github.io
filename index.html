@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shiva Rami Reddy Madira — Cloud Platform · DevOps · SRE</title>
-<meta name="description" content="Cloud Platform Engineer with 5+ years building secure, scalable cloud-native platforms across AWS, Azure, and GCP. Open to Senior DevOps, Platform Engineering, and SRE roles.">
+<meta name="description" content="Cloud Platform Engineer with 5+ years building secure, scalable cloud-native platforms across AWS, Azure, and GCP.">
 <meta name="keywords" content="Cloud Platform Engineer, DevOps Engineer, Kubernetes, Terraform, AWS, Azure, GCP, SRE, Platform Engineering, San Jose CA">
 <meta name="author" content="Shiva Rami Reddy Madira">
 
@@ -20,7 +20,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://madirashivaram.github.io">
 <meta property="og:title" content="Shiva Rami Reddy Madira — Cloud Platform Engineer">
-<meta property="og:description" content="5+ years engineering cloud-native platforms at enterprise scale across AWS, Azure, and GCP. Open to Senior DevOps, Platform Engineering, and SRE roles.">
+<meta property="og:description" content="5+ years engineering cloud-native platforms at enterprise scale across AWS, Azure, and GCP.">
 <meta property="og:image" content="https://madirashivaram.github.io/assets/photo.jpg">
 <meta property="og:site_name" content="Shiva Rami Reddy Madira">
 
@@ -49,6 +49,8 @@
   --shadow-md: 0 4px 24px rgba(0,0,0,0.09);
   --shadow-lg: 0 16px 56px rgba(0,0,0,0.12);
   --nav-bg:  rgba(255,255,255,0.82);
+  --green: #28c85a;
+  --amber: #F9AB00;
   --t: 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 [data-theme="dark"] {
@@ -83,8 +85,8 @@ nav.scrolled{box-shadow:var(--shadow-md)}
 .nav-end{display:flex;align-items:center;gap:0.75rem}
 .icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:transparent;display:flex;align-items:center;justify-content:center;font-size:1.05rem;color:var(--text-2);transition:all var(--t)}
 .icon-btn:hover{background:var(--bg-alt);color:var(--text-1);border-color:rgba(var(--accent-rgb),0.4)}
-.btn-hire{padding:0.45rem 1.1rem;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;font-size:0.85rem;border:none;transition:all var(--t);box-shadow:0 2px 10px rgba(var(--accent-rgb),0.35)}
-.btn-hire:hover{transform:translateY(-1px);box-shadow:0 4px 18px rgba(var(--accent-rgb),0.45)}
+.icon-circle-btn{width:32px;height:32px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-1);transition:all var(--t)}
+.icon-circle-btn:hover{background:var(--bg-alt);border-color:rgba(var(--accent-rgb),0.4);color:var(--accent)}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--text-1);border-radius:2px;transition:all var(--t)}
 .mobile-menu{display:none;position:absolute;top:64px;left:0;right:0;background:var(--nav-bg);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:1.5rem 2rem;flex-direction:column;gap:1.25rem}
@@ -118,6 +120,8 @@ nav.scrolled{box-shadow:var(--shadow-md)}
 .social-pill{display:inline-flex;align-items:center;gap:0.5rem;padding:0.4rem 0.9rem;border-radius:100px;border:1px solid var(--border);background:transparent;font-size:0.8125rem;font-weight:500;color:var(--text-2);transition:all var(--t)}
 .social-pill svg{width:15px;height:15px;flex-shrink:0}
 .social-pill:hover{border-color:rgba(var(--accent-rgb),0.4);color:var(--accent);background:rgba(var(--accent-rgb),0.08);transform:translateY(-2px)}
+.social-pill.coffee{background:#FFDD00;border-color:#FFDD00;color:#1a1a1a;font-weight:700}
+.social-pill.coffee:hover{background:#ffe033;color:#1a1a1a;transform:translateY(-2px)}
 /* ─── HERO PHOTO ─── */
 .hero-visual{display:flex;justify-content:center;align-items:center}
 .profile-wrap{position:relative;width:320px;height:320px}
@@ -126,6 +130,14 @@ nav.scrolled{box-shadow:var(--shadow-md)}
 @keyframes rotatering{to{transform:rotate(360deg)}}
 .profile-img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center center}
 .profile-fallback{position:absolute;inset:0;border-radius:50%;background:linear-gradient(135deg,var(--accent),rgba(var(--accent-rgb),0.5));display:none;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:#fff}
+/* ─── SECTION HAIRLINE ─── */
+.section-hairline{height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0.5}
+/* ─── TERMINAL STRIP ─── */
+.terminal-strip{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.terminal-strip-inner{display:flex;align-items:center;gap:0.875rem;padding:0.875rem 2rem}
+.terminal-dots{display:flex;gap:5px;flex-shrink:0}
+.terminal-dots span{width:7px;height:7px;border-radius:50%;background:var(--text-3);opacity:0.5}
+.terminal-text{font-family:'IBM Plex Mono',monospace;font-size:0.8125rem;color:var(--green);white-space:nowrap;overflow:hidden}
 /* ─── SECTIONS ─── */
 section{padding:5rem 2rem}
 .alt-bg{background:var(--bg-alt)}
@@ -145,13 +157,21 @@ section{padding:5rem 2rem}
 .stat-num{font-family:'Syne',sans-serif;font-size:2.25rem;font-weight:800;color:var(--accent);letter-spacing:-1.5px;line-height:1;margin-bottom:0.25rem}
 .stat-desc{font-size:0.875rem;color:var(--text-2);font-weight:500}
 /* ─── EXPERIENCE ─── */
-.timeline{margin-top:3rem;position:relative;padding-left:2px}
-.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(var(--accent-rgb),0.08));border-radius:2px}
-.tl-item{padding-left:2.75rem;padding-bottom:2.75rem;position:relative}
-.tl-item:last-child{padding-bottom:0}
-.tl-dot{position:absolute;left:-7px;top:8px;width:16px;height:16px;border-radius:50%;background:var(--accent);border:3px solid var(--bg-alt);box-shadow:0 0 0 3px rgba(var(--accent-rgb),0.25)}
+.timeline{margin-top:1.5rem;display:flex;flex-direction:column;gap:1.5rem}
+.exp-pipeline{display:flex;align-items:flex-start;margin-top:3rem;margin-bottom:0.5rem;overflow-x:auto}
+.exp-node{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.exp-node-circle{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.exp-node-circle svg{width:15px;height:15px;color:#fff}
+.exp-node.done .exp-node-circle{background:var(--green)}
+.exp-node.current .exp-node-circle{background:var(--accent);box-shadow:0 0 0 4px rgba(var(--accent-rgb),0.2)}
+.exp-node-label{font-size:0.8rem;margin-top:0.5rem;color:var(--text-2);font-weight:500;white-space:nowrap}
+.exp-node.current .exp-node-label{color:var(--accent);font-weight:700}
+.exp-line{flex:1;height:2px;background:var(--border);margin-top:16px;min-width:40px}
 .tl-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all var(--t)}
 .tl-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(var(--accent-rgb),0.25);transform:translateX(4px)}
+.tl-card.tl-current{border-left:3px solid var(--accent)}
+.tl-card.tl-green{border-left:3px solid var(--green)}
+.tl-card.tl-amber{border-left:3px solid var(--amber)}
 .tl-top{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.25rem}
 .tl-company{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700}
 .tl-period{font-family:'IBM Plex Mono',monospace;font-size:0.725rem;color:var(--accent);background:rgba(var(--accent-rgb),0.1);padding:0.2rem 0.625rem;border-radius:100px;letter-spacing:0.3px;white-space:nowrap}
@@ -174,36 +194,36 @@ section{padding:5rem 2rem}
 .tier-line{flex:1;height:1px;background:var(--border)}
 .tier-desc{font-family:'IBM Plex Mono',monospace;font-size:0.68rem;color:var(--text-3);white-space:nowrap}
 .tier-tags{display:flex;flex-wrap:wrap;gap:0.625rem}
-.tier-tag{padding:0.45rem 1.125rem;border-radius:8px;font-size:0.875rem;font-weight:500;cursor:default;transition:all var(--t)}
+.tier-tag{display:inline-flex;align-items:center;gap:0.4rem;padding:0.45rem 1.125rem;border-radius:8px;font-size:0.875rem;font-weight:500;cursor:default;transition:all var(--t)}
+.tier-tag svg{width:14px;height:14px;flex-shrink:0}
 .expert .tier-tag{background:rgba(var(--accent-rgb),0.08);border:1px solid rgba(var(--accent-rgb),0.2);color:var(--text-1)}
+.expert .tier-tag svg{color:var(--accent)}
 .expert .tier-tag:hover{background:rgba(var(--accent-rgb),0.15);border-color:rgba(var(--accent-rgb),0.4)}
 .proficient .tier-tag{background:rgba(40,200,90,0.05);border:1px solid rgba(40,200,90,0.15);color:var(--text-2)}
 .proficient .tier-tag:hover{background:rgba(40,200,90,0.12);color:var(--text-1)}
 .familiar .tier-tag{background:rgba(249,171,0,0.05);border:1px solid rgba(249,171,0,0.15);color:var(--text-2)}
 .familiar .tier-tag:hover{background:rgba(249,171,0,0.12);color:var(--text-1)}
 /* ─── CREDENTIALS ─── */
-.cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
+.cred-subhead{font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;margin-top:3rem;margin-bottom:1.25rem}
+.cred-subhead.second{margin-top:2.75rem}
+.cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
 .cred-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;align-items:flex-start;gap:1.125rem;transition:all var(--t);position:relative;overflow:hidden}
-.cred-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent)}
+.cred-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.cred-card.edu::before{background:#9c6cd9}
+.cred-card.ms::before{background:var(--accent)}
+.cred-card.aws::before{background:#ff9900}
 .cred-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(var(--accent-rgb),0.25)}
-.cred-ico{width:48px;height:48px;border-radius:12px;flex-shrink:0;background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.18);display:flex;align-items:center;justify-content:center;font-size:1.5rem;transition:background var(--t)}
-.cred-card:hover .cred-ico{background:rgba(var(--accent-rgb),0.18)}
+.cred-ico{width:44px;height:44px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff}
+.cred-ico svg{width:20px;height:20px}
+.cred-ico.edu{background:#6c3fb0}
+.cred-ico.ms{background:#0c447c}
+.cred-ico.aws{background:#c25e00}
 .cred-type{font-family:'IBM Plex Mono',monospace;font-size:0.67rem;color:var(--text-3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.375rem}
 .cred-title{font-family:'Syne',sans-serif;font-size:0.975rem;font-weight:700;line-height:1.35;margin-bottom:0.25rem}
 .cred-org{font-size:0.875rem;color:var(--accent);font-weight:500;margin-bottom:0.2rem}
 .cred-meta{font-family:'IBM Plex Mono',monospace;font-size:0.72rem;color:var(--text-3);margin-bottom:0.5rem}
 .cred-verify{display:inline-flex;align-items:center;gap:0.375rem;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--accent);border:1px solid rgba(var(--accent-rgb),0.3);background:rgba(var(--accent-rgb),0.07);padding:0.2rem 0.6rem;border-radius:5px;transition:all var(--t);text-decoration:none}
 .cred-verify:hover{background:rgba(var(--accent-rgb),0.14);border-color:var(--accent)}
-/* ─── TESTIMONIALS ─── */
-.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
-.tcard{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all var(--t);display:flex;flex-direction:column}
-.tcard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);border-color:rgba(var(--accent-rgb),0.25)}
-.tcard-quote{font-family:'Syne',sans-serif;font-size:3.5rem;line-height:1;color:var(--accent);opacity:0.2;margin-bottom:-0.5rem}
-.tcard-text{font-size:0.9375rem;color:var(--text-2);line-height:1.8;font-style:italic;flex:1;margin-bottom:1.25rem}
-.tcard-author{display:flex;align-items:center;gap:0.875rem;padding-top:1rem;border-top:1px solid var(--border)}
-.tcard-av{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:rgba(var(--accent-rgb),0.1);border:1px solid rgba(var(--accent-rgb),0.2);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:700;font-size:0.875rem;color:var(--accent)}
-.tcard-name{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:0.1rem}
-.tcard-role{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--text-3)}
 /* ─── BLOG ─── */
 .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;margin-top:3rem}
 .bcard{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem;display:flex;flex-direction:column;gap:0.875rem;transition:all var(--t);position:relative;overflow:hidden;text-decoration:none;color:inherit}
@@ -220,7 +240,6 @@ section{padding:5rem 2rem}
 /* ─── CONTACT FORM ─── */
 .contact-box{margin-top:3rem;background:var(--bg-card);border:1px solid var(--border);border-radius:24px;padding:3rem;text-align:left;position:relative;overflow:hidden}
 .contact-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
-.contact-box::after{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(var(--accent-rgb),0.07),transparent 70%);bottom:-200px;left:50%;transform:translateX(-50%);pointer-events:none}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
 .cf-info-label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:0.5rem}
 .cf-heading{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:-0.75px;margin-bottom:1rem;line-height:1.2}
@@ -238,6 +257,8 @@ section{padding:5rem 2rem}
 .form-input:focus,.form-textarea:focus{border-color:rgba(var(--accent-rgb),0.6);box-shadow:0 0 0 3px rgba(var(--accent-rgb),0.12)}
 .form-input::placeholder,.form-textarea::placeholder{color:var(--text-3)}
 .form-textarea{resize:vertical;min-height:120px;line-height:1.65}
+.form-word-count{font-size:0.75rem;color:var(--text-3);text-align:right}
+.form-word-count.over{color:#f87171}
 .form-btn{display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;padding:0.825rem 1.75rem;border-radius:8px;background:var(--accent);color:#fff;font-weight:600;font-size:0.9375rem;border:none;transition:all var(--t);cursor:pointer;box-shadow:0 4px 18px rgba(var(--accent-rgb),0.35);width:100%}
 .form-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 28px rgba(var(--accent-rgb),0.45)}
 .form-btn:disabled{opacity:0.65;cursor:not-allowed;transform:none}
@@ -287,12 +308,11 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .contact-layout{grid-template-columns:1fr;gap:2.5rem}
   .nav-links{display:none}.hamburger{display:flex}
-  .btn-hire{display:none}
   .contact-box{padding:2rem 1.5rem}
+  .terminal-text{white-space:normal}
 }
 @media(max-width:560px){
   section{padding:4rem 1.25rem}
-  .tl-item{padding-left:2.25rem}
   .stats-grid{grid-template-columns:1fr 1fr}
   .footer-inner{flex-direction:column;text-align:center}
 }
@@ -310,11 +330,14 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
       <li><a href="#skills">Skills</a></li>
       <li><a href="#credentials">Education</a></li>
       <li><a href="#writing">Writing</a></li>
+      <li><a href="#schedule">Schedule</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-end">
+      <a href="assets/resume.pdf" download="Shiva_Madira_Resume.pdf" class="icon-circle-btn" aria-label="Download Resume" title="Download Resume">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
       <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
-      <a href="#contact">Hire Me</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -326,6 +349,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
     <a href="#skills" class="mob-link">Skills</a>
     <a href="#credentials" class="mob-link">Education</a>
     <a href="#writing" class="mob-link">Writing</a>
+    <a href="#schedule" class="mob-link">Schedule</a>
     <a href="#contact" class="mob-link">Contact</a>
   </div>
 </nav>
@@ -339,7 +363,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
     <div class="hero-text">
       <div class="hero-eyebrow animate">
         <span class="eyebrow-dot"></span>
-        Open to New Opportunities &nbsp;·&nbsp; US - India
+        Currently building payment infrastructure at Citibank
       </div>
       <h1 class="hero-name animate d1">
         <span class="first">Shiva Rami Reddy</span><br>
@@ -359,16 +383,10 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
           Get in Touch
         </a>
-        <!-- ★ NEW: Resume download button -->
         <a href="assets/resume.pdf" download="Shiva_Madira_Resume.pdf" class="btn-resume">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download Resume
         </a>
-        <!--
-        <a href="https://www.linkedin.com/in/shivarammadira/" target="_blank" rel="noopener" class="btn-outline">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>-->
       </div>
       <div class="hero-socials animate d5">
         <a href="https://github.com/madirashivaram" target="_blank" rel="noopener" class="social-pill">
@@ -388,7 +406,6 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
     <div class="hero-visual animate d3">
       <div class="profile-wrap">
         <div class="profile-ring"><div class="profile-ring-bg"></div></div>
-        <!-- ★ CHANGED: photo loaded from file, not base64 -->
         <img class="profile-img" src="assets/photo.jpg" alt="Shiva Rami Reddy Madira"
           onerror="this.style.display='none';document.getElementById('profileFb').style.display='flex'">
         <div class="profile-fallback" id="profileFb">SR</div>
@@ -396,6 +413,18 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
+
+<div class="section-hairline"></div>
+
+<!-- ══════ TERMINAL STRIP ══════ -->
+<div class="terminal-strip">
+  <div class="wrap terminal-strip-inner">
+    <span class="terminal-dots"><span></span><span></span><span></span></span>
+    <span class="terminal-text" id="termText">&nbsp;</span>
+  </div>
+</div>
+
+<div class="section-hairline"></div>
 
 <!-- ══════ ABOUT ══════ -->
 <section id="about" class="alt-bg">
@@ -418,61 +447,74 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<div class="section-hairline"></div>
+
 <!-- ══════ EXPERIENCE ══════ -->
 <section id="experience">
   <div class="wrap">
     <p class="section-tag animate">Experience</p>
     <h2 class="section-heading animate d1">Work History</h2>
     <p class="section-sub animate d2">Four years across fintech, healthcare, and enterprise consulting each role adding a new layer of platform complexity.</p>
+
+    <div class="exp-pipeline animate d2">
+      <div class="exp-node done">
+        <div class="exp-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="exp-node-label">Wipro</div>
+      </div>
+      <div class="exp-line"></div>
+      <div class="exp-node done">
+        <div class="exp-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="exp-node-label">TCS</div>
+      </div>
+      <div class="exp-line"></div>
+      <div class="exp-node current">
+        <div class="exp-node-circle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div class="exp-node-label">Citibank</div>
+      </div>
+    </div>
+
     <div class="timeline">
-      <div class="tl-item animate d2">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top"><span class="tl-company">Citibank</span><span class="tl-period">July 2025 – Present</span></div>
-          <div class="tl-role">Cloud Platform Engineer</div>
-          <div class="tl-loc">📍 San Jose, CA</div>
-          <p class="tl-story">Architect and operate the secure multi cloud Kubernetes platform on AWS and GCP powering Citibank's internal payment processing systems. Own the full platform layer cloud landing zone design with network segmentation and IAM boundaries, reusable Terraform module development, GitOps pipelines via ArgoCD with blue/green and canary deployment strategies, and centralized observability through Dynatrace with Davis AI anomaly detection. Enforce secrets governance across all environments via HashiCorp Vault with RBAC and automated rotation policies.</p>
-          <div class="tl-impacts">
-            <span class="tl-impact"><span class="tl-impact-val">↓40%</span> config inconsistencies</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓30%</span> false positive alerts</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓25%</span> service disruptions</span>
-            <span class="tl-impact"><span class="tl-impact-val">&lt;40 min</span> incident response</span>
-          </div>
+      <div class="tl-card tl-current animate d2">
+        <div class="tl-top"><span class="tl-company">Citibank</span><span class="tl-period">July 2025 – Present</span></div>
+        <div class="tl-role">Cloud Platform Engineer</div>
+        <div class="tl-loc">📍 San Jose, CA</div>
+        <p class="tl-story">Architect and operate the secure multi cloud Kubernetes platform on AWS and GCP powering Citibank's internal payment processing systems. Own the full platform layer cloud landing zone design with network segmentation and IAM boundaries, reusable Terraform module development, GitOps pipelines via ArgoCD with blue/green and canary deployment strategies, and centralized observability through Dynatrace with Davis AI anomaly detection. Enforce secrets governance across all environments via HashiCorp Vault with RBAC and automated rotation policies.</p>
+        <div class="tl-impacts">
+          <span class="tl-impact"><span class="tl-impact-val">↓40%</span> config inconsistencies</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓30%</span> false positive alerts</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓25%</span> service disruptions</span>
+          <span class="tl-impact"><span class="tl-impact-val">&lt;40 min</span> incident response</span>
         </div>
       </div>
-      <div class="tl-item animate d3">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top"><span class="tl-company">Tata Consultancy Services</span><span class="tl-period">June 2022 – July 2023</span></div>
-          <div class="tl-role">AWS DevOps Engineer</div>
-          <div class="tl-loc">📍 Hyderabad, India</div>
-          <p class="tl-story">Designed modular AWS infrastructure with Terraform, VPCs, multi-AZ RDS, Auto Scaling Groups, ALBs, IAM, and S3. Led the migration of containerized healthcare applications into Amazon EKS with Helm and ArgoCD GitOps workflows. Built and owned CI/CD pipelines in Jenkins and GitLab CI that lifted release cadence from bi weekly to multiple daily deployments. Drove a 30% MTTR reduction through centralized Prometheus, Grafana, and CloudWatch observability. Diagnosed and resolved a critical production IAM misconfiguration, restoring full availability and hardening least privilege policies across the environment.</p>
-          <div class="tl-impacts">
-            <span class="tl-impact"><span class="tl-impact-val">↓55%</span> environment deploy time</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓30%</span> MTTR</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓15%</span> AWS infrastructure costs</span>
-            <span class="tl-impact"><span class="tl-impact-val">99.9%</span> availability maintained</span>
-          </div>
+      <div class="tl-card tl-green animate d3">
+        <div class="tl-top"><span class="tl-company">Tata Consultancy Services</span><span class="tl-period">June 2022 – July 2023</span></div>
+        <div class="tl-role">AWS DevOps Engineer</div>
+        <div class="tl-loc">📍 Hyderabad, India</div>
+        <p class="tl-story">Designed modular AWS infrastructure with Terraform, VPCs, multi-AZ RDS, Auto Scaling Groups, ALBs, IAM, and S3. Led the migration of containerized healthcare applications into Amazon EKS with Helm and ArgoCD GitOps workflows. Built and owned CI/CD pipelines in Jenkins and GitLab CI that lifted release cadence from bi weekly to multiple daily deployments. Drove a 30% MTTR reduction through centralized Prometheus, Grafana, and CloudWatch observability. Diagnosed and resolved a critical production IAM misconfiguration, restoring full availability and hardening least privilege policies across the environment.</p>
+        <div class="tl-impacts">
+          <span class="tl-impact"><span class="tl-impact-val">↓55%</span> environment deploy time</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓30%</span> MTTR</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓15%</span> AWS infrastructure costs</span>
+          <span class="tl-impact"><span class="tl-impact-val">99.9%</span> availability maintained</span>
         </div>
       </div>
-      <div class="tl-item animate d4">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-top"><span class="tl-company">Wipro</span><span class="tl-period">Sept 2020 – May 2022</span></div>
-          <div class="tl-role">Cloud Engineer</div>
-          <div class="tl-loc">📍 Bengaluru, India</div>
-          <p class="tl-story">Led the migration of 30+ legacy and AWS hosted workloads to Azure, standardizing infrastructure and enabling hybrid cloud scalability across the organization. Used Terraform and ARM templates to automate end to end provisioning, compressing environment setup from multiple days to under 6 hours. Combined Terraform with Ansible for post provisioning VM configuration, producing consistent server builds at scale. Established Azure DevOps CI/CD pipelines for AKS deployments and managed Kubernetes workloads declaratively through ArgoCD GitOps workflows.</p>
-          <div class="tl-impacts">
-            <span class="tl-impact"><span class="tl-impact-val">↓65%</span> provisioning time</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓50%</span> manual release effort</span>
-            <span class="tl-impact"><span class="tl-impact-val">↓35%</span> config drift</span>
-            <span class="tl-impact"><span class="tl-impact-val">30+</span> workloads migrated</span>
-          </div>
+      <div class="tl-card tl-amber animate d4">
+        <div class="tl-top"><span class="tl-company">Wipro</span><span class="tl-period">Sept 2020 – May 2022</span></div>
+        <div class="tl-role">Cloud Engineer</div>
+        <div class="tl-loc">📍 Bengaluru, India</div>
+        <p class="tl-story">Led the migration of 30+ legacy and AWS hosted workloads to Azure, standardizing infrastructure and enabling hybrid cloud scalability across the organization. Used Terraform and ARM templates to automate end to end provisioning, compressing environment setup from multiple days to under 6 hours. Combined Terraform with Ansible for post provisioning VM configuration, producing consistent server builds at scale. Established Azure DevOps CI/CD pipelines for AKS deployments and managed Kubernetes workloads declaratively through ArgoCD GitOps workflows.</p>
+        <div class="tl-impacts">
+          <span class="tl-impact"><span class="tl-impact-val">↓65%</span> provisioning time</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓50%</span> manual release effort</span>
+          <span class="tl-impact"><span class="tl-impact-val">↓35%</span> config drift</span>
+          <span class="tl-impact"><span class="tl-impact-val">30+</span> workloads migrated</span>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<div class="section-hairline"></div>
 
 <!-- ══════ SKILLS (TIERS) ══════ -->
 <section id="skills" class="alt-bg">
@@ -490,18 +532,18 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <span class="tier-desc">Daily driver &nbsp;·&nbsp; Production proven</span>
         </div>
         <div class="tier-tags">
-          <span class="tier-tag">Kubernetes</span>
-          <span class="tier-tag">Terraform</span>
-          <span class="tier-tag">AWS EKS</span>
-          <span class="tier-tag">ArgoCD</span>
-          <span class="tier-tag">Docker</span>
-          <span class="tier-tag">GitOps</span>
-          <span class="tier-tag">Helm</span>
-          <span class="tier-tag">GitHub Actions</span>
-          <span class="tier-tag">HashiCorp Vault</span>
-          <span class="tier-tag">Prometheus</span>
-          <span class="tier-tag">Grafana</span>
-          <span class="tier-tag">CI/CD Pipelines</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Kubernetes</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>Terraform</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>AWS EKS</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>ArgoCD</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Docker</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>GitOps</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>Helm</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>GitHub Actions</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>HashiCorp Vault</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Prometheus</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Grafana</span>
+          <span class="tier-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>CI/CD Pipelines</span>
         </div>
       </div>
 
@@ -552,15 +594,19 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
-<!-- ══════ CREDENTIALS (with Credly links) ══════ -->
+<div class="section-hairline"></div>
+
+<!-- ══════ CREDENTIALS ══════ -->
 <section id="credentials">
   <div class="wrap">
     <p class="section-tag animate">Credentials</p>
     <h2 class="section-heading animate d1">Education &amp; Certifications</h2>
     <p class="section-sub animate d2">Academic foundations and industry recognized cloud credentials.</p>
+
+    <h3 class="cred-subhead animate">Education</h3>
     <div class="cred-grid">
-      <div class="cred-card animate d1">
-        <div class="cred-ico">🎓</div>
+      <div class="cred-card edu animate d1">
+        <div class="cred-ico edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/><path d="M22 10v6"/></svg></div>
         <div>
           <div class="cred-type">Education · Master's</div>
           <div class="cred-title">Master of Science in Computer Science</div>
@@ -568,8 +614,8 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <div class="cred-meta">📍 Lubbock, TX &nbsp;·&nbsp; Aug 2023 – May 2025</div>
         </div>
       </div>
-      <div class="cred-card animate d2">
-        <div class="cred-ico">🏛️</div>
+      <div class="cred-card edu animate d2">
+        <div class="cred-ico edu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/><path d="M22 10v6"/></svg></div>
         <div>
           <div class="cred-type">Education · Bachelor's</div>
           <div class="cred-title">B.E. in Computer Science &amp; Engineering</div>
@@ -577,43 +623,44 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <div class="cred-meta">📍 Chennai, India &nbsp;·&nbsp; Aug 2016 – May 2020</div>
         </div>
       </div>
-      <div class="cred-card animate d3">
-        <div class="cred-ico">🏅</div>
+    </div>
+
+    <h3 class="cred-subhead second animate">Certifications</h3>
+    <div class="cred-grid">
+      <div class="cred-card ms animate d1">
+        <div class="cred-ico ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
         <div>
           <div class="cred-type">Certification · Microsoft</div>
-          <div class="cred-title">Microsoft Certified: Azure Fundamentals</div>
+          <div class="cred-title">Microsoft Certified: DevOps Engineer Expert</div>
           <div class="cred-org">Microsoft</div>
-          <div class="cred-meta">Beginner-level · CI/CD · Monitoring · Infrastructure</div>
-          <!-- ★ REPLACE href with your actual Credly badge URL -->
-          <a href="https://learn.microsoft.com/en-us/users/madirashivaramireddy-3326/credentials/fc320a970a99f202?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener" class="cred-verify">
+          <div class="cred-meta">Expert-level · CI/CD · Release Management</div>
+          <a href="https://learn.microsoft.com/en-us/users/madirashivaramireddy-3326/credentials/5cd5adfab3f6f9ba?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener" class="cred-verify">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Verify Credential
           </a>
         </div>
       </div>
-      <div class="cred-card animate d4">
-        <div class="cred-ico">🏅</div>
-        <div>
-          <div class="cred-type">Certification · Microsoft</div>
-          <div class="cred-title">Microsoft Certified: Azure Developer Associate</div>
-          <div class="cred-org">Microsoft</div>
-          <div class="cred-meta">Associate-level · Azure · Cloud Development</div>
-          <!-- ★ REPLACE href with your actual Credly badge URL -->
-          <a href="https://learn.microsoft.com/en-gb/users/madirashivaramireddy-3326/credentials/a14c66b82835b6fe?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener" class="cred-verify">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Verify Credential
-          </a>
-        </div>
-      </div>
-      <div class="cred-card animate d4">
-        <div class="cred-ico">🏅</div>
+      <div class="cred-card aws animate d2">
+        <div class="cred-ico aws"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
         <div>
           <div class="cred-type">Certification · AWS</div>
           <div class="cred-title">AWS Cloud Technology Consultant</div>
           <div class="cred-org">Amazon Web Services</div>
           <div class="cred-meta">Associate-level · AWS · IAM · Terraform</div>
-          <!-- ★ REPLACE href with your actual Credly badge URL -->
           <a href="https://www.coursera.org/account/accomplishments/specialization/H9MFEA2CI4IW" target="_blank" rel="noopener" class="cred-verify">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Verify Credential
+          </a>
+        </div>
+      </div>
+      <div class="cred-card ms animate d3">
+        <div class="cred-ico ms"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <div>
+          <div class="cred-type">Certification · Microsoft</div>
+          <div class="cred-title">Microsoft Certified: Azure Developer Associate</div>
+          <div class="cred-org">Microsoft</div>
+          <div class="cred-meta">Associate-level · Azure · Cloud Development</div>
+          <a href="https://learn.microsoft.com/en-gb/users/madirashivaramireddy-3326/credentials/a14c66b82835b6fe?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank" rel="noopener" class="cred-verify">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
             Verify Credential
           </a>
@@ -623,6 +670,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<div class="section-hairline"></div>
 
 <!-- ══════ WRITING / BLOG ══════ -->
 <section id="writing">
@@ -631,8 +679,6 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
     <h2 class="section-heading animate d1">Technical Articles</h2>
     <p class="section-sub animate d2">Thoughts on cloud infrastructure, platform engineering, and lessons from production.</p>
     <div class="blog-grid">
-
-      <!-- ★ REPLACE href="#" with link to your published article -->
       <a href="https://www.linkedin.com/pulse/how-i-reduced-kubernetes-incident-response-time-33-major-madira-ie3uc/" class="bcard animate d2">
         <span class="bcard-tag">Kubernetes</span>
         <h3 class="bcard-title">How I Reduced Kubernetes Incident Response Time by 33%</h3>
@@ -642,19 +688,15 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <span class="bcard-arrow">→</span>
         </div>
       </a>
-  
-      <!-- ★ REPLACE href="#" with link to your published article -->
       <a href="https://medium.com/@ramsivapm/gitops-with-argocd-what-breaks-in-production-that-no-tutorial-prepares-you-for-f95383bf907f" class="bcard animate d3">
         <span class="bcard-tag">GitOps with ArgoCD</span>
         <h3 class="bcard-title">What Breaks in Production That No Tutorial Prepares You For</h3>
-        <p class="bcard-excerpt">When I started implementing GitOps at payment platform, I had already read the documentation, watched the conference talks, and set up ArgoCD in a test cluster. I knew the theory. What I didn’t know was the three things that would actually cost me sleep in production.</p>
+        <p class="bcard-excerpt">When I started implementing GitOps at payment platform, I had already read the documentation, watched the conference talks, and set up ArgoCD in a test cluster. I knew the theory. What I didn't know was the three things that would actually cost me sleep in production.</p>
         <div class="bcard-footer">
           <span class="badge-soon">Medium</span>
           <span class="bcard-arrow">→</span>
         </div>
       </a>
-
-      <!-- ★ REPLACE href="#" with link to your published article -->
       <a href="https://medium.com/@ramsivapm/terraform-module-design-for-multi-cloud-what-actually-cuts-configuration-drift-db0345876e3d" class="bcard animate d4">
         <span class="bcard-tag">Terraform</span>
         <h3 class="bcard-title">Terraform Module Design for Multi-Cloud: What Actually Cuts Configuration Drift</h3>
@@ -664,25 +706,47 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
           <span class="bcard-arrow">→</span>
         </div>
       </a>
-
+    </div>
+    <div style="text-align:center;margin-top:2.5rem" class="animate d5">
+      <a href="https://medium.com/@ramsivapm" target="_blank" rel="noopener" class="btn-outline">
+        View More Articles on Medium
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+      </a>
     </div>
   </div>
 </section>
 
+<div class="section-hairline"></div>
+
+<!-- ══════ SCHEDULE ══════ -->
+<section id="schedule" class="alt-bg">
+  <div class="wrap">
+    <p class="section-tag animate">Schedule</p>
+    <h2 class="section-heading animate d1">Grab 15 Minutes on My Calendar</h2>
+    <p class="section-sub animate d2">Pick a slot that works for you — opens in a new tab.</p>
+    <a href="https://cal.com/madirashivaram/15min" target="_blank" rel="noopener" class="btn-primary animate d3" style="margin-top:2rem">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Schedule a 15-Min Call
+    </a>
+  </div>
+</section>
+
+<div class="section-hairline"></div>
+
 <!-- ══════ CONTACT ══════ -->
-<section id="contact" class="alt-bg">
+<section id="contact">
   <div class="wrap">
     <p class="section-tag animate">Contact</p>
     <div class="contact-box animate d1">
       <div class="contact-layout">
         <div>
           <p class="cf-info-label">Let's have a chat</p>
-          <h2 class="cf-heading">Open to New<br>Opportunities</h2>
-          <p class="cf-desc">Looking for Senior DevOps, Platform Engineering, and SRE roles across the US and India. Fill out the form and I'll get back to you within 24 hours.</p>
+          <h2 class="cf-heading">Get In Touch</h2>
+          <p class="cf-desc">Reach out about DevOps and platform engineering roles, infrastructure consulting, or just to compare notes on running Kubernetes at scale.</p>
           <div class="cf-details">
             <div class="cf-detail-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              <a href="mailto:madirashivaram@gmail.com">ramsivapm@gmail.com</a>
+              <a href="mailto:ramsivapm@gmail.com">ramsivapm@gmail.com</a>
             </div>
             <div class="cf-detail-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.47 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 5.54 5.54l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -690,7 +754,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
             </div>
             <div class="cf-detail-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>San Jose, CA &nbsp;·&nbsp; Open to all US & India locations</span>
+              <span>San Jose, CA</span>
             </div>
           </div>
           <div class="cf-socials">
@@ -701,6 +765,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
             <a href="https://www.linkedin.com/in/shivarammadira/" target="_blank" rel="noopener" class="social-pill">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
               LinkedIn
+            </a>
+            <a href="https://buymeacoffee.com/madirashivaram" target="_blank" rel="noopener" class="social-pill coffee">
+              ☕ Buy Me a Coffee
             </a>
           </div>
         </div>
@@ -718,8 +785,9 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
             <input class="form-input" type="email" id="cf-email" name="email" placeholder="you@company.com" required autocomplete="email">
           </div>
           <div class="form-group">
-            <label class="form-label" for="cf-msg">Message</label>
-            <textarea class="form-textarea" id="cf-msg" name="message" placeholder="Tell me about the role or opportunity…" required rows="5"></textarea>
+            <label class="form-label" for="cf-msg">Message <span style="color:var(--text-3);font-weight:400">(optional, max 300 words)</span></label>
+            <textarea class="form-textarea" id="cf-msg" name="message" placeholder="Tell me about the role or opportunity…" rows="5"></textarea>
+            <div class="form-word-count" id="wordCount">0 / 300 words</div>
           </div>
           <div class="form-notice success" id="formSuccess">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:1px"><path d="M20 6 9 17l-5-5"/></svg>
@@ -739,10 +807,12 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<div class="section-hairline"></div>
+
 <!-- ══════ FOOTER ══════ -->
 <footer>
   <div class="footer-inner">
-    <p class="footer-copy">© 2026 <strong>Shiva Rami Reddy Madira</strong> &nbsp;·&nbsp;</p>
+    <p class="footer-copy">© 2026 <strong>Shiva Rami Reddy Madira</strong></p>
     <div class="footer-right">
       <a href="https://github.com/madirashivaram" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/shivarammadira/" target="_blank" rel="noopener">LinkedIn</a>
@@ -762,9 +832,7 @@ footer{padding:1.75rem 2rem;border-top:1px solid var(--border)}
   <button class="fab-btn" id="fabBtn" aria-label="Change color theme">🎨</button>
 </div>
 
-<!-- ★ GoatCounter Analytics — free, privacy-friendly -->
-<!-- SETUP: go to goatcounter.com, create free account with your email,
-     get your tracking URL, replace YOURNAME below with your GoatCounter username -->
+<!-- GoatCounter Analytics -->
 <script data-goatcounter="https://madirashivaram.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 
@@ -820,7 +888,10 @@ function applyTheme(){
   try{localStorage.setItem('srm_t',dark?'dark':'light');}catch(e){}
 }
 applyTheme();
-tBtn.addEventListener('click',()=>{dark=!dark;applyTheme();});
+tBtn.addEventListener('click',()=>{
+  dark=!dark;
+  applyTheme();
+});
 
 /* ─── NAV SCROLL ─── */
 window.addEventListener('scroll',()=>{
@@ -862,6 +933,27 @@ const cobs=new IntersectionObserver(entries=>{
 },{threshold:0.5});
 document.querySelectorAll('[data-count]').forEach(el=>cobs.observe(el));
 
+/* ─── TERMINAL TYPING ─── */
+(function(){
+  const commands=["kubectl get pods -n citi-payments","argocd app sync payment-platform","terraform apply -target=eks-prod"];
+  let ci=0,pos=0,typing=true;
+  const el=document.getElementById('termText');
+  function step(){
+    const cmd="$ "+commands[ci];
+    if(typing){
+      pos++;
+      el.textContent=cmd.slice(0,pos)+"▊";
+      if(pos>=cmd.length){typing=false;setTimeout(step,1400);return;}
+    } else {
+      pos--;
+      el.textContent=cmd.slice(0,pos)+"▊";
+      if(pos<=2){typing=true;ci=(ci+1)%commands.length;setTimeout(step,300);return;}
+    }
+    setTimeout(step,typing?45:20);
+  }
+  step();
+})();
+
 /* ─── CONTACT FORM ─── */
 (function(){
   const form=document.getElementById('contactForm');
@@ -870,17 +962,33 @@ document.querySelectorAll('[data-count]').forEach(el=>cobs.observe(el));
   const successEl=document.getElementById('formSuccess');
   const errorEl=document.getElementById('formError');
   const errorMsg=document.getElementById('formErrorMsg');
+  const msgField=document.getElementById('cf-msg');
+  const wordCountEl=document.getElementById('wordCount');
+  const MAX_WORDS=300;
+
+  function countWords(str){
+    const trimmed=str.trim();
+    return trimmed?trimmed.split(/\s+/).length:0;
+  }
+  function updateWordCount(){
+    const n=countWords(msgField.value);
+    wordCountEl.textContent=n+' / '+MAX_WORDS+' words';
+    wordCountEl.classList.toggle('over',n>MAX_WORDS);
+  }
+  msgField.addEventListener('input',updateWordCount);
+  updateWordCount();
+
   function setLoading(on){btn.disabled=on;btn.classList.toggle('loading',on);}
-  function showSuccess(){successEl.classList.add('show');errorEl.classList.remove('show');form.reset();}
+  function showSuccess(){successEl.classList.add('show');errorEl.classList.remove('show');form.reset();updateWordCount();}
   function showError(msg){errorMsg.textContent=msg||'Something went wrong. Please try again.';errorEl.classList.add('show');successEl.classList.remove('show');}
   function validate(){
     const name=form.querySelector('#cf-name').value.trim();
     const email=form.querySelector('#cf-email').value.trim();
-    const msg=form.querySelector('#cf-msg').value.trim();
+    const msg=msgField.value.trim();
     const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if(!name){showError('Please enter your name.');return false;}
     if(!emailRe.test(email)){showError('Please enter a valid email address.');return false;}
-    if(msg.length<10){showError('Please write a message (at least 10 characters).');return false;}
+    if(countWords(msg)>MAX_WORDS){showError('Your message is over the 300 word limit — please shorten it.');return false;}
     return true;
   }
   form.addEventListener('submit',async function(e){
